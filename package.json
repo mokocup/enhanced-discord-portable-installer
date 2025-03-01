@@ -1,0 +1,33 @@
+{
+  "name": "enhanced-discord-portable-installer",
+  "version": "1.0.0",
+  "description": "Installer support discord portable for BetterDiscord, Vencord, Equicord and more ",
+  "author": "mokocup",
+  "license": "MIT",
+  "repository": "https://github.com/mokocup/enhanced-discord-portable-installer",
+  "homepage": "https://github.com/mokocup/enhanced-discord-portable-installer",
+  "bugs": "https://github.com/mokocup/enhanced-discord-portable-installer/issues",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "build": "tsc && pkg . --debug",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^7.3.2",
+    "got": "^11.8.2"
+  },
+  "devDependencies": {
+    "@types/got": "^9.6.12",
+    "@types/node": "^22.13.7",
+    "@yao-pkg/pkg": "^6.3.1",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
+  },
+  "pkg": {
+    "scripts": "dist/**/*.js",
+    "outputPath": "binary"
+  },
+  "type": "module"
+}
