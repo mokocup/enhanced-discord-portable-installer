@@ -14,7 +14,7 @@ This will link you to the latest builds found in the [releases](https://github.c
 
 ## Roadmap
 - [X] BetterDiscord
-- [ ] Vencord
+- [X] Vencord
 - [ ] Equicord
 
 ## Running the development
