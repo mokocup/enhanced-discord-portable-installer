@@ -28,7 +28,7 @@ export default class BetterDiscordModule implements Module {
 
     readonly repository = "https://api.github.com/repos/BetterDiscord/BetterDiscord/releases/latest"
 
-    private checkDiscordFirstRun = async ()=>{
+    private checkDiscordFirstRun = async () => {
         console.log("✅ Checking Discord Environment");
         const appPath = await getDiscordAppPath(this.discordPath) as string;
         const injectPath = path.join(this.discordPath, "app", appPath, "modules", "discord_desktop_core-1", "discord_desktop_core", "index.js")
@@ -97,13 +97,12 @@ export default class BetterDiscordModule implements Module {
         }
     }
 
-    install = async (path = this.discordPath) => {
+    install = async () => {
         try {
             await this.checkDiscordFirstRun();
             await this.makeDirectory()
             await this.downloadAsar();
             await this.injectBetterDiscord();
-
             console.log("");
             console.log(`✅ Install successful, please restart Discord.`);
             process.exit();
@@ -111,6 +110,5 @@ export default class BetterDiscordModule implements Module {
             console.log(`❌ Install failed: ${err.message}`);
             return false
         }
-
     }
 }
